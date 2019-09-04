@@ -1,44 +1,15 @@
-import React, { useContext } from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 import { View, Text } from 'react-native';
-import { useNavigation } from 'react-navigation-hooks';
-import { authorize } from 'react-native-app-auth'
 import IconFeather from 'react-native-vector-icons/Feather';
 
-import { Context } from '../../Context';
 
-import { CLIENT_ID, CLIENT_SECRET } from '../../utils/api';
 
 import Button from '../Button';
 
 import styles from './styles';
 
-const config = {
-  clientId: CLIENT_ID,
-  clientSecret: CLIENT_SECRET,
-  redirectUrl: 'com.rebelliontest://',
-  serviceConfiguration: {
-    authorizationEndpoint: 'https://github.com/login/oauth/authorize',
-    tokenEndpoint: `https://github.com/login/oauth/access_token`,
-  },
-}
-
-
-const LoginForm = () => {
-  const { activateAuth } = useContext(Context);
-  const { navigate } = useNavigation();
-
-  const onPress = async () => {
-    try {
-      const authState = await authorize(config)
-      if (authState) {
-        activateAuth(authState.accessToken)
-        navigate('App');
-      }
-    } catch (error) {
-      // console.log('error', error)
-    }
-  }
-
+const Login = ({ onPress }) => {
   return (
     <View style={styles.container}>
       <View style={styles.containerIcon}>
@@ -54,14 +25,17 @@ const LoginForm = () => {
         <Button value="Login with Github" onPress={onPress} />
       </View>
     </View>
-
   )
 }
 
-LoginForm.propTypes = {
+Login.propTypes = {
+  onPress: PropTypes.func,
+}
 
+Login.defaultProps = {
+  onPress: PropTypes.func,
 }
 
 
-export default LoginForm
+export default Login
 

@@ -1,12 +1,12 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState } from 'react';
 import { AsyncStorage } from 'react-native';
 
-export const Context = createContext();
+const Context = createContext();
 
 const KEYNAME = '@RebellionTest:';
 
 // eslint-disable-next-line react/prop-types
-const ProviderContext = ({ children }) => {
+const Provider = ({ children }) => {
   const [isAuth, setIsAuth] = useState(false);
 
   const getToken = async () => {
@@ -37,7 +37,7 @@ const ProviderContext = ({ children }) => {
   );
 };
 
-export default {
-  Provider: ProviderContext,
-  Consumer: Context.Consumer,
-};
+const { Consumer } = Context;
+
+export { Context, Provider, Consumer };
+

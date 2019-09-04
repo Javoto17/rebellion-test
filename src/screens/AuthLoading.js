@@ -1,7 +1,7 @@
 import { useContext, useEffect } from 'react';
 import { useNavigation } from 'react-navigation-hooks';
 
-import { Context } from '../Context';
+import { Context } from '../context/AuthContext';
 
 const AuthLoading = () => {
   const { activateAuth, getToken } = useContext(Context);

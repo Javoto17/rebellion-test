@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     elevation: 2,
     borderRadius: 10,
+    overflow: 'hidden',
   },
   paragraph: {
     marginVertical: 2,

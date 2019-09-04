@@ -10,16 +10,17 @@ import styles from './styles';
 
 const ListOfRepos = ({
   data,
+  onPressItem
 }) => {
 
   const renderItem = ({ item }) => {
-    return <ItemRepo item={item} />
+    return <ItemRepo item={item} onPress={onPressItem} />
   }
-
+  
   return (
     data && Array.isArray(data) ? (
       <FlatList
-        style={{ paddingHorizontal: 10, marginTop: 18 }}
+        style={styles.list}
         data={data}
         renderItem={renderItem}
         keyExtractor={(item) => `list-item-${item.id}`}
@@ -48,11 +49,13 @@ ListOfRepos.propTypes = {
     name: PropTypes.string,
     id: PropTypes.number,
   })),
+  onPressItem: PropTypes.func,
 }
 
 ListOfRepos.defaultProps = {
   item: {},
   data: null,
+  onPressItem: () => {},
 }
 
 export default ListOfRepos

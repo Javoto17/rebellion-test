@@ -5,7 +5,6 @@ import colors from '../../utils/colors';
 const styles = StyleSheet.create({
   list: {
     paddingHorizontal: 10,
-    marginTop: 24
   },
   fillEmptyList: {
     color: colors.blueText,

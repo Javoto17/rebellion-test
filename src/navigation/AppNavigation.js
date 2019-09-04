@@ -1,8 +1,9 @@
 import { createStackNavigator, createAppContainer, createSwitchNavigator } from 'react-navigation';
 
-import LoginScreen from '../pages/Login';
-import ProfileScreen from '../pages/Profile';
-import AuthLoadingScreen from '../pages/AuthLoading';
+import LoginScreen from '../screens/Login';
+import ProfileScreen from '../screens/Profile';
+import AuthLoadingScreen from '../screens/AuthLoading';
+import DetailScreen from '../screens/Detail';
 
 const AppStack = createStackNavigator(
   {
@@ -10,8 +11,13 @@ const AppStack = createStackNavigator(
       screen: ProfileScreen,
       path: 'profile',
     },
+    Detail: {
+      screen: DetailScreen,
+      path: 'detail',
+    },
   },
   {
+    initialRouteName: 'Profile',
     defaultNavigationOptions: {
       headerTitleStyle: {
         width: '100%',
@@ -20,23 +26,20 @@ const AppStack = createStackNavigator(
   }
 );
 
-const AuthStack = createStackNavigator({
+const AuthStack = createStackNavigator(
+  {
   Login: {
     screen: LoginScreen,
     path: 'login',
   },
-
 });
 
 const AuthSwitch = createAppContainer(
   createSwitchNavigator(
     {
-      App: {
-        screen: AppStack,
-        path: '',
-      },
-      Auth: { screen: AuthStack, path: 'auth' },
-      AuthLoading: { screen: AuthLoadingScreen },
+      App: AppStack,
+      Auth: AuthStack,
+      AuthLoading: AuthLoadingScreen,
     },
     {
       initialRouteName: 'AuthLoading',

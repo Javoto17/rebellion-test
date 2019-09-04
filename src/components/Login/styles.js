@@ -5,7 +5,7 @@ import colors from '../../utils/colors';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.white,
+    backgroundColor: colors.background,
     justifyContent: 'center',
     flexDirection: 'column',
     paddingHorizontal: 8,

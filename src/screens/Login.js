@@ -1,11 +1,12 @@
 import React from 'react';
 import { SafeAreaView } from 'react-navigation';
 
-import Login from '../components/Login';
+import LoginContainer from '../container/LoginContainer';
+import colors from '../utils/colors';
 
 const LoginView = () => (
   <SafeAreaView style={{ flex: 1 }}>
-    <Login />
+    <LoginContainer />
   </SafeAreaView>
 );
 
@@ -13,6 +14,7 @@ LoginView.navigationOptions = {
   title: '',
   headerStyle: {
     elevation: 0,
+    backgroundColor: colors.background,
     flex: 1,
   }
 };

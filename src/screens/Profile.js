@@ -1,16 +1,15 @@
 import React from 'react';
 import { SafeAreaView } from 'react-navigation';
 
-import InfoUser from '../components/Profile';
+import UserProfile from '../container/UserProfileContainer';
 import LogOut from '../components/LogOut';
 
 import colors from '../utils/colors';
 
 const Profile = () => {
-
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <InfoUser />
+      <UserProfile />
     </SafeAreaView>
   );
 }

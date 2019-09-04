@@ -3,7 +3,7 @@ import { TouchableWithoutFeedback, View } from 'react-native';
 import { useNavigation } from 'react-navigation-hooks';
 import IconFeather from 'react-native-vector-icons/Feather';
 
-import { Context } from '../../Context';
+import { Context } from '../../context/AuthContext';
 
 const LogOut = () => {
   const { removeAuth } = useContext(Context);
