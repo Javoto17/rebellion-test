@@ -15,7 +15,6 @@ LoginView.navigationOptions = {
   headerStyle: {
     elevation: 0,
     backgroundColor: colors.background,
-    flex: 1,
   }
 };
 export default LoginView;
