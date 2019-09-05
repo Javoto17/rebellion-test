@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     height: 0,
     width: SCREEN_WIDTH,
     borderTopColor: colors.mainBlue,
-    borderTopWidth: (SCREEN_HEIGHT / 2) / 2,
+    borderTopWidth: (SCREEN_HEIGHT / 2) / 1.75,
     borderBottomWidth: SCREEN_WIDTH,
     borderBottomColor: 'transparent',
   },
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   wrapperCard: {
-    minHeight: (SCREEN_HEIGHT / 2) / 2,
+    minHeight: (SCREEN_HEIGHT / 2) / 1.75,
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
