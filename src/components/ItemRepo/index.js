@@ -23,8 +23,8 @@ const ItemRepo = ({ item, onPress }) => {
           </Text>
         </View>
         {/* <View style={styles.containerActions}>
-        <Icon name="star" size={18} />
-      </View> */}
+          <Icon name="star" size={18} />
+        </View> */}
       </View>
     </TouchableNativeFeedback>
 
@@ -37,10 +37,12 @@ ItemRepo.propTypes = {
     full_name: PropTypes.string,
     fork: PropTypes.bool,
   }),
+  onPress: PropTypes.func,
 }
 
 ItemRepo.defaultProps = {
-  item: {}
+  item: {},
+  onPress: PropTypes.func,
 }
 
 export default ItemRepo
